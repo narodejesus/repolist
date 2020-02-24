@@ -9,6 +9,11 @@ export type RepoListNavigationProp = StackNavigationProp<
 
 export interface Repo {
     id: number;
+    owner: {
+        avatar_url: string;
+    };
+    full_name: string;
+    description: string;
 }
 
 export interface RepoListPayload {

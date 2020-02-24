@@ -9,7 +9,8 @@ const styles = StyleSheet.create({
         height: 40, 
         borderColor: 'gray', 
         borderWidth: 0.5,
-        borderRadius: 5
+        borderRadius: 5,
+        paddingHorizontal: 10,
     },
     error: {
         color: 'red',
@@ -32,7 +33,7 @@ const InputText = ({onChangeText, placeholder, value, hasError}: Props) => (
             style={styles.input}
             value={value}
         />
-        {!hasError || <Text style={styles.error}>Please complete the form</Text>}
+        {!hasError || <Text style={styles.error}>Please enter a {placeholder}</Text>}
     </View>
 )
 

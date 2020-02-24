@@ -11,13 +11,17 @@ import InputText from '../common/InputText'
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'white',
         alignContent: 'center',
         justifyContent: 'center',
     },
     formContainer: {
-        height: 300,
+        alignContent: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'white',
         paddingHorizontal: 10,
+        paddingVertical: 20,
+        marginHorizontal: 10,
+        borderRadius: 5,
     },
     button: {
         marginTop: 10

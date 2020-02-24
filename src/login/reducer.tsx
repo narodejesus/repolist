@@ -1,7 +1,7 @@
 import {USER_LOGIN} from './constants'
 
 interface Payload {
-    username?: string;
+    email?: string;
     password?: string;
 }
 
@@ -20,12 +20,12 @@ const initialState = {
 
 export default (state: InitialState = initialState, action: SetLogin) => {
     if (action.type === USER_LOGIN) {
-        const {username, password} = action.payload || {}
+        const {email, password} = action.payload || {}
 
         return {
             ...state,
             user: {
-                username,
+                email,
                 password,
             }
         }

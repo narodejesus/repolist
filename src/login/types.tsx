@@ -8,7 +8,7 @@ export type LoginScreenNavigationProp = StackNavigationProp<
 >
 
 export interface LoginFormValue {
-    username?: string;
+    email?: string;
     password?: string;
 }
 

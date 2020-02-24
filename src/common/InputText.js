@@ -24,18 +24,16 @@ interface Props {
     hasError?: Boolean;
 }
 
-const InputText = ({onChangeText, placeholder, value, hasError}: Props) => {
-    return (
-        <View style={styles.inputContainer}>
-            <TextInput
-                placeholder={placeholder}
-                onChangeText={onChangeText}
-                style={styles.input}
-                value={value}
-            />
-            {!hasError || <Text style={styles.error}>Please complete the form</Text>}
-        </View>
-    )
-}
+const InputText = ({onChangeText, placeholder, value, hasError}: Props) => (
+    <View style={styles.inputContainer}>
+        <TextInput
+            placeholder={placeholder}
+            onChangeText={onChangeText}
+            style={styles.input}
+            value={value}
+        />
+        {!hasError || <Text style={styles.error}>Please complete the form</Text>}
+    </View>
+)
 
 export default InputText

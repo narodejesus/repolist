@@ -1,24 +1,11 @@
 import {USER_LOGIN} from './constants'
-
-interface Payload {
-    email?: string;
-    password?: string;
-}
-
-interface InitialState {
-    user: Payload;
-}
-
-interface SetLogin {
-    type: string;
-    payload: Payload;
-}
+import {SetLogin, LoginState} from './types'
 
 const initialState = {
     user: {}
 }
 
-export default (state: InitialState = initialState, action: SetLogin) => {
+export default (state: LoginState = initialState, action: SetLogin) => {
     if (action.type === USER_LOGIN) {
         const {email, password} = action.payload || {}
 

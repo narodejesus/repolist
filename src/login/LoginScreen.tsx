@@ -53,7 +53,6 @@ const LoginScreen = (props: Props) => {
         }
 
         await props.onLogin(formValue)
-        props.navigation.navigate('REPO_LIST')
     }
 
     return (

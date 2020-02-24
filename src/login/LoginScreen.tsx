@@ -7,7 +7,6 @@ import {onLogin} from './actions'
 import {LoginScreenNavigationProp} from './types'
 import useForm from '../common/useForm'
 import InputText from '../common/InputText'
-import { SCREENS } from '../navigation/constants'
 
 const styles = StyleSheet.create({
     container: {

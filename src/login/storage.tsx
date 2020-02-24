@@ -7,7 +7,7 @@ interface User {
     email: string;
 }
 
-export const saveUserCredentials = (user: User):Promise<void> => AsyncStorage.setItem(USER_CREDENTIALS_KEY, JSON.stringify(user))
+export const saveUserCredentials = ({email}: User):Promise<void> => AsyncStorage.setItem(USER_CREDENTIALS_KEY, JSON.stringify({email}))
 
 export const loadUserCredentials = async (): Promise<User> => {
     const userCredentials = await AsyncStorage.getItem(USER_CREDENTIALS_KEY)

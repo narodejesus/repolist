@@ -1,3 +1,4 @@
 export const SCREENS = {
-    LOGIN: 'LOGIN'
+    LOGIN: 'LOGIN',
+    REPO_LIST: 'REPO_LIST'
 }

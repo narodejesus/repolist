@@ -1,8 +1,8 @@
 import AsyncStorage from '@react-native-community/async-storage'
 import * as storage from '../storage'
 
-describe('Login reducer', () => {
-    it('should should be able to store the user credential object', async () => {
+describe('Login storage', () => {
+    it('should should be able to store the email credential only', async () => {
         await storage.saveUserCredentials({ email: 'juan@gmail.com' });
 
         expect(AsyncStorage.setItem).toBeCalledWith('USER_CREDENTIALS', JSON.stringify({ email: 'juan@gmail.com' }));

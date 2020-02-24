@@ -3,6 +3,7 @@ import {getRepoList, getCurrentPage, getCurrentCount} from '../selectors'
 describe('Repo selector', () => {
     it('should be able select items and current count ', () => {
         const state = {
+            login: { user: {}},
             repo: {
                 totalCount: 100,
                 currentPage: 1,
@@ -32,6 +33,7 @@ describe('Repo selector', () => {
 
     it('should should return empty is item is empty', () => {
         const state = {
+            login: { user: {}},
             repo: {
                 totalCount: 100,
                 currentPage: 1,

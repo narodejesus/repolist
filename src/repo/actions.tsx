@@ -44,7 +44,7 @@ export const onFetchNextRepo = (dispatch: Function) => async ({query, currentPag
     const nextPage = currentPage + INCREMENT_PAGE
     const repos = await fetchRepo(query, nextPage)
 
-    if (repos.items.length <= 0) {
+    if (!repos.items || repos.items.length <= 0) {
         return
     }
 

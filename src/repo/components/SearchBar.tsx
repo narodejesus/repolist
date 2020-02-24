@@ -6,14 +6,15 @@ const styles = StyleSheet.create({
     container: {
         elevation: 1,
         borderBottomColor: 'gray',
-        borderBottomWidth: 0.2
+        borderBottomWidth: 0.5
     },
     input: {
         paddingHorizontal: 15,
+        height: 50,
     }
 })
 
-type Props = {
+interface Props {
     onChangeText: (text: string) => void;
 }
 

@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import {Alert, View, Image, Text, StyleSheet, Button, Linking} from 'react-native'
+import {Alert, SafeAreaView, StyleSheet, Button, Linking} from 'react-native'
 import {Repo, RepoListNavigationProp} from '../repo/types'
 import RepoDetailsComponent from './RepoDetailsComponent'
 
@@ -37,10 +37,10 @@ const RepoDetailsScreen = ({route, navigation}: Props) => {
     }, [])
 
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <RepoDetailsComponent item={item} />
             <Button title="Go to repo" onPress={handleOpenLink(item.html_url)}/>
-        </View>
+        </SafeAreaView>
     )
 }
 

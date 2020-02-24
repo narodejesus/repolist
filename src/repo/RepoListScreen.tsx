@@ -1,11 +1,15 @@
-import React, {useState, useEffect} from 'react'
-import {View, Text, StyleSheet, FlatList} from 'react-native'
+import React, {useState} from 'react'
+import {View, StyleSheet, FlatList} from 'react-native'
 import {connect, ConnectedProps} from 'react-redux'
+
+import RepoItem from './components/RepoItem'
+import SearchBar from './components/SearchBar'
+import ListEmpty from './components/ListEmpty'
+import LoadingIndicator from './components/LoadingIndicator'
+
 
 import {onFetchRepo, onFetchNextRepo, Query} from './actions'
 import * as repoSelector from './selectors'
-import RepoItem from './RepoItem'
-import SearchBar from './SearchBar'
 import {Repo, RepoListNavigationProp} from './types'
 import {AppState} from '../reducerTypes'
 
@@ -84,8 +88,10 @@ const RepoListScreen = (props: Props) => {
                 data={props.items}
                 renderItem={renderItem(props)}
                 keyExtractor={keyExtractor}
-                onEndReachedThreshold={0.5}
+                onEndReachedThreshold={0.7}
                 initialNumToRender={20}
+                ListEmptyComponent={ListEmpty}
+                ListFooterComponent={isNextFetching &&  LoadingIndicator}
             />
         </View>
     )

@@ -1,6 +1,6 @@
 import React from 'react'
 import {View, Image, Text, StyleSheet, TouchableOpacity} from 'react-native'
-import {Repo, RepoListNavigationProp} from './types'
+import {Repo} from './types'
 
 const styles = StyleSheet.create({
     container: {
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     }
 })
 
-type Props = {
+interface Props {
     item: Repo;
     onPress: () => void;
 }

@@ -12,3 +12,17 @@ export interface LoginFormValue {
     password?: string;
 }
 
+export interface Payload {
+    email?: string;
+    password?: string;
+}
+
+export interface LoginState {
+    user: Payload;
+}
+
+export interface SetLogin {
+    type: string;
+    payload: Payload;
+}
+

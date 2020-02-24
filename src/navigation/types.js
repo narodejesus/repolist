@@ -1,3 +1,4 @@
 export type StackParamList = {
-    LOGIN: undefined
+    LOGIN: undefined;
+    REPO_LIST: undefined;
 }

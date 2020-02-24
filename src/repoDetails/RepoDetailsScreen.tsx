@@ -9,35 +9,6 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         paddingHorizontal: 20,
         paddingVertical: 20
-    },
-    topContainer: {
-        flexDirection: 'column', 
-        flex: 1
-    },
-    detailContainer: {
-        flexDirection: 'column',
-        paddingHorizontal: 10,
-        flexShrink: 1,
-        marginTop: 10,
-    },
-    fullName: {
-        fontSize: 18,
-        fontWeight: 'bold'
-    },
-    avatar: {
-        width: 80, 
-        height: 80,
-        alignSelf: 'center',
-    },
-    countContainer: {
-        marginTop: 20,
-        flexDirection: 'row', 
-        alignItems: 'center'
-    },
-    count: {
-        flex: 1, 
-        flexDirection: 'column', 
-        alignItems: 'center'
     }
 })
 

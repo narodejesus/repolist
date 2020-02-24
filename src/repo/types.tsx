@@ -12,8 +12,13 @@ export interface Repo {
     owner: {
         avatar_url: string;
     };
+    name: string;
     full_name: string;
     description: string;
+    html_url: string;
+    watchers: number;
+    stargazers_count: number;
+    forks: number;
 }
 
 export interface RepoListPayload {

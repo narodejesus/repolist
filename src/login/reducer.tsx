@@ -1,4 +1,4 @@
-import {USER_LOGIN} from './constants'
+import {USER_LOGIN} from './actionTypes'
 import {SetLogin, LoginState} from './types'
 
 const initialState = {

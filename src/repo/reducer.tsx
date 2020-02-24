@@ -1,4 +1,4 @@
-import {FETCH_REPO, FETCH_REPO_NEXT} from './constants'
+import {FETCH_REPO, FETCH_REPO_NEXT} from './actionTypes'
 import {RepoListPayload, SetRepo} from './types'
 
 const initialState = {

@@ -1,5 +1,5 @@
 
-import {FETCH_REPO, FETCH_REPO_NEXT} from './constants'
+import {FETCH_REPO, FETCH_REPO_NEXT} from './actionTypes'
 import {RepoListPayload} from './types'
 
 const DEFAULT_PAGE = 1

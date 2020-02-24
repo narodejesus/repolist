@@ -1,4 +1,4 @@
-import {USER_LOGIN} from './constants'
+import {USER_LOGIN} from './actionTypes'
 import {LoginFormValue} from './types'
 import * as storage from './storage'
 

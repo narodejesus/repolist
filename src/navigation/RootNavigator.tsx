@@ -12,7 +12,7 @@ import * as loginSelector from '../login/selector'
 import * as loginAction from '../login/actions'
 
 import RepoListScreen from '../repo/RepoListScreen'
-import RepoDetailsComponent from '../repo/RepoDetailsComponent'
+import RepoDetailsScreen from '../repoDetails/RepoDetailsScreen'
 
 const mapStateToProps = (state: AppState) => ({
   email: loginSelector.getEmail(state)
@@ -46,7 +46,7 @@ const RootNavigator = (props: Props) => {
       {isEmailExist ? (
         <Stack.Navigator>
           <Stack.Screen name={SCREENS.REPO_LIST} component={RepoListScreen} options={{ title: 'Repo List'}}/>
-          <Stack.Screen name={SCREENS.REPO} component={RepoDetailsComponent} options={{ title: 'Repo'}}/>
+          <Stack.Screen name={SCREENS.REPO} component={RepoDetailsScreen} options={{ title: 'Repo'}}/>
         </Stack.Navigator>
       ): (
         <Stack.Navigator>

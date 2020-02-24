@@ -1,0 +1,76 @@
+import React, {useEffect} from 'react'
+import {Alert, View, Image, Text, StyleSheet, Button, Linking} from 'react-native'
+import {Repo, RepoListNavigationProp} from '../repo/types'
+import RepoDetailsComponent from './RepoDetailsComponent'
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        flexDirection: 'column',
+        paddingHorizontal: 20,
+        paddingVertical: 20
+    },
+    topContainer: {
+        flexDirection: 'column', 
+        flex: 1
+    },
+    detailContainer: {
+        flexDirection: 'column',
+        paddingHorizontal: 10,
+        flexShrink: 1,
+        marginTop: 10,
+    },
+    fullName: {
+        fontSize: 18,
+        fontWeight: 'bold'
+    },
+    avatar: {
+        width: 80, 
+        height: 80,
+        alignSelf: 'center',
+    },
+    countContainer: {
+        marginTop: 20,
+        flexDirection: 'row', 
+        alignItems: 'center'
+    },
+    count: {
+        flex: 1, 
+        flexDirection: 'column', 
+        alignItems: 'center'
+    }
+})
+
+interface Props {
+    route: {
+        params: Repo;
+    };
+    navigation: RepoListNavigationProp;
+}
+
+const handleOpenLink = (link: string) => () => {
+    Linking.canOpenURL(link).then(supported => {
+        if (supported) {
+          Linking.openURL(link)
+        } else {
+          Alert.alert(`'Failed to open url: ${link}`)
+        }
+    });
+}
+
+const RepoDetailsScreen = ({route, navigation}: Props) => {
+    const item = route.params
+
+    useEffect(() => {
+        navigation.setOptions({ title: item.name })
+    }, [])
+
+    return (
+        <View style={styles.container}>
+            <RepoDetailsComponent item={item} />
+            <Button title="Go to repo" onPress={handleOpenLink(item.html_url)}/>
+        </View>
+    )
+}
+
+export default RepoDetailsScreen

@@ -23,9 +23,7 @@ const mapDispatchToProps = {
 
 const connector = connect(mapStateToProps, mapDispatchToProps)
 
-type PropsFromRedux = ConnectedProps<typeof connector>
-
-type Props = PropsFromRedux
+type Props = ConnectedProps<typeof connector>
 
 const Stack = createStackNavigator()
 
@@ -38,7 +36,7 @@ const loadCredentials = async (props: Props): Promise<void> => {
 const RootNavigator = (props: Props) => {
   useEffect(() => {
     loadCredentials(props)
-  })
+  }, [])
 
   const isEmailExist = props.email !== '' 
 

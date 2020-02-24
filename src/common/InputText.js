@@ -3,7 +3,7 @@ import {View, StyleSheet, TextInput, Text} from 'react-native'
 
 const styles = StyleSheet.create({
     inputContainer: {
-        marginVertical: 5,
+        marginBottom: 10,
     },
     input: {
         height: 40, 

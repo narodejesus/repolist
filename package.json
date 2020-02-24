@@ -12,6 +12,7 @@
     "@react-navigation/native": "^5.0.7",
     "@react-navigation/stack": "^5.0.8",
     "@types/react-redux": "^7.1.7",
+    "lodash.debounce": "^4.0.8",
     "react": "16.8.6",
     "react-native": "0.60.5",
     "react-native-gesture-handler": "^1.6.0",
@@ -37,7 +38,9 @@
   },
   "jest": {
     "preset": "react-native",
-    "setupFiles": ["./jest.setup.js"],
+    "setupFiles": [
+      "./jest.setup.js"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",

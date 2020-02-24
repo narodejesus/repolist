@@ -5,14 +5,14 @@ describe('Login reducer', () => {
         const action = {
             type: 'USER_LOGIN',
             payload: {
-                username: 'johndoe22',
+                email: 'johndoe22',
                 password: 'johndoe22password'
             }
         }
 
         expect(reducer({ user: {} }, action)).toEqual({
             user: {
-                username: 'johndoe22',
+                email: 'johndoe22',
                 password: 'johndoe22password'
             }
         })

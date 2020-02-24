@@ -22,7 +22,12 @@ const fetchRepo = async (query: string, page: number = 1) => {
     return response.json()
 }
 
-export const onFetchRepo = (dispatch: Function) => async (query: string = '') => {
+export interface Query {
+    query: string;
+    currentPage?: number;
+}
+
+export const onFetchRepo = (dispatch: Function) => async ({query}: Query) => {
     const repos = await fetchRepo(query)
 
     dispatch(
@@ -34,14 +39,17 @@ export const onFetchRepo = (dispatch: Function) => async (query: string = '') =>
     )
 }
 
-export const onFetchNextRepo = (dispatch: Function) => async (query: string = '', currentPage: number = DEFAULT_PAGE) => {
+export const onFetchNextRepo = (dispatch: Function) => async ({query, currentPage}: Query) => {
     const INCREMENT_PAGE = 1
     const nextPage = currentPage + INCREMENT_PAGE
-
     const repos = await fetchRepo(query, nextPage)
 
+    if (repos.items.length <= 0) {
+        return
+    }
+
     dispatch(
-        onFetchRepoAction({
+        onFetchNextRepoAction({
             totalCount: repos.total_count,
             currentPage: nextPage,
             items: repos.items

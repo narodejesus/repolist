@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, memo} from 'react'
 import {View, StyleSheet, FlatList} from 'react-native'
 import {connect, ConnectedProps} from 'react-redux'
 
@@ -66,7 +66,7 @@ const useFetchHandler = (props: Props, fetch: Function) => {
     return {isLoading, fetchPage}
 }
 
-const RepoListScreen = (props: Props) => {
+const RepoListScreen = memo((props: Props) => {
     const [query, setQuery] = useState('')
     const {isLoading, fetchPage} = useFetchHandler(props, props.onFetchRepo)
     const {isLoading: isNextFetching, fetchPage: fetchNext} = useFetchHandler(props, props.onFetchNextRepo)
@@ -95,6 +95,6 @@ const RepoListScreen = (props: Props) => {
             />
         </View>
     )
-}
+})
 
 export default connector(RepoListScreen)
